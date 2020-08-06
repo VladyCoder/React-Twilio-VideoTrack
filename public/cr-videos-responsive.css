@@ -1,0 +1,38 @@
+:root{
+    --common-xs-width: 100%;
+    --common-sm-width: 50%;
+    --common-md-width: 33.33333%;
+    --common-lg-width: 25%;
+
+    --main-md-width: 66.66%;
+    --main-lg-width: 50%;
+}
+
+.participant_item{
+    width: var(--common-xs-width);
+    float: left;
+}
+
+@media screen and (min-width: 768px){
+    .participant_item{
+        width: var(--common-sm-width);
+    }
+}
+
+@media screen and (min-width: 992px){
+    .participant_item{
+        width: var(--common-md-width);
+    }
+    .participant_item:first-child{
+        width: var(--main-md-width);
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .participant_item{
+        width: var(--common-lg-width);
+    }
+    .participant_item:first-child{
+        width: var(--main-lg-width);
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&display=swap" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Cuaderno Rojo Video te permitirá realizar video llamdas con los niños de centro"
+    />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Cuaderno Rojo Video</title>
+    <style>
+      .custom_fc_frame { right: 8px !important; bottom: 40px !important;}
+    </style>
+    <link rel="stylesheet" href="../cr-videos-responsive.css">
+  </head>
+  <body>
+    <noscript>Deberás habilitar JavaScript para ejecutar esta aplicación.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script>
+      function initFreshChat() {
+        window.fcWidget.init({
+          token: "b3d3045e-3efb-4af3-8330-f149e7ae5073",
+          host: "https://wchat.freshchat.com",
+          siteId: "CLASES_ONLINE",
+          locale: "es",
+          "config": {
+            "disableNotifications": true,
+            "cssNames": {
+              "widget": "custom_fc_frame",
+            },
+          },
+          tags: ["videoapp"]
+        });
+      }
+      function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+    </script>
+  </body>
+</html>
